@@ -12,10 +12,10 @@ namespace CancellingDueToTimeout
             var cts = new CancellationTokenSource();
             var token = cts.Token;
 
-            cts.CancelAfter(TimeSpan.FromSeconds(5));
-            await Task.Delay(TimeSpan.FromSeconds(10), token);
+            cts.CancelAfter(TimeSpan.FromSeconds(2));
+            await Task.Delay(TimeSpan.FromSeconds(5), token);
 
-            WriteLine("I've managed to finish my work");
+            WriteLine("I've managed to finish my work");                //never reached
         }
 
         static async Task Main(string[] args)
